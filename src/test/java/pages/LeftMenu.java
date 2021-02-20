@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 // In page classes we define the elements of the page and their actions
-public class LeftMenu extends Base{
+public class LeftMenu extends Base {
 
     // Constructor
-    public LeftMenu(){
+    public LeftMenu() {
         PageFactory.initElements(driver, this);
     }
 

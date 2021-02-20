@@ -2,15 +2,19 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pages.LoginPage;
+import pages.TopMenu;
 import utilities.Driver;
 
 public class LoginSteps {
 
     WebDriver driver = Driver.getDriver();
     LoginPage loginPage = new LoginPage();
+    TopMenu topMenu = new TopMenu();
 
     @Given("Open Campus homepage")
     public void openCampusHomepage() {
@@ -18,14 +22,14 @@ public class LoginSteps {
         driver.manage().window().maximize();
     }
 
-    @And("Enter username")
-    public void enterUsername() {
-        loginPage.enterUsername("daulet2030@gmail.com");
+    @And("Enter username {string}")
+    public void enterUsername(String username) {
+        loginPage.enterUsername(username);
     }
 
-    @And("Enter password")
-    public void enterPassword() {
-        loginPage.enterPassword("TechnoStudy123@");
+    @And("Enter password {string}")
+    public void enterPassword(String password) {
+        loginPage.enterPassword(password);
     }
 
 
@@ -35,4 +39,15 @@ public class LoginSteps {
     }
 
 
+    @Then("Verify login passes")
+    public void verifyLoginPasses() {
+        Assert.assertTrue(topMenu.getTextOfTopMenuProfileMenu().contains("Saurbekov"));
+    }
+
+    @Then("Verify login fails")
+    public void verifyLoginFails() {
+        String actual = loginPage.getTextOfAlertDialogBox();
+        String expected = "Invalid username or password";
+        Assert.assertEquals(actual,expected);
+    }
 }
