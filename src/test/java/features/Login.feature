@@ -1,23 +1,7 @@
 Feature: Login Page Functionalities
-#
-#  Scenario Outline: Login to the user account with valid credentials
-#    Given Open Campus homepage
-#    And Enter username "<username>"
-#    And Enter password "<password>"
-#    When Click on login button
-#    Then Verify login passes
-#    Examples:
-#      | username             | password        |
-#      | daulet2030@gmail.com | TechnoStudy123@ |
-#
-
-#  ""
-#  <>
-#  "<>"
-
 
   Scenario Outline: Login to the user account with valid or invalid credentials
-    Given Open Campus homepage
+    Given Open Campus "homepage"
     And Enter username "<username>"
     And Enter password "<password>"
     When Click on login button

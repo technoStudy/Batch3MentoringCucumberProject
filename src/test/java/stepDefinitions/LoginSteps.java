@@ -9,6 +9,7 @@ import org.testng.Assert;
 import pages.LoginPage;
 import pages.TopMenu;
 import utilities.Driver;
+import utilities.ReadFromConfigFile;
 
 public class LoginSteps {
 
@@ -16,9 +17,9 @@ public class LoginSteps {
     LoginPage loginPage = new LoginPage();
     TopMenu topMenu = new TopMenu();
 
-    @Given("Open Campus homepage")
-    public void openCampusHomepage() {
-        driver.get("https://test.campus.techno.study/");
+    @Given("Open Campus {string}")
+    public void openCampusHomepage(String homepage) {
+        driver.get(ReadFromConfigFile.getValueFor(homepage));
         driver.manage().window().maximize();
     }
 
@@ -50,4 +51,6 @@ public class LoginSteps {
         String expected = "Invalid username or password";
         Assert.assertEquals(actual,expected);
     }
+
+
 }
