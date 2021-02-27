@@ -2,8 +2,7 @@ Feature: Login Page Functionalities
 
   Scenario Outline: Login to the user account with valid or invalid credentials
     Given Open Campus "homepage"
-    And Enter username "<username>"
-    And Enter password "<password>"
+    And Enter "<username>" and "<password>"
     When Click on login button
     Then Verify login <status>
 

@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
 import pages.TopMenu;
 import utilities.Driver;
@@ -23,15 +24,15 @@ public class LoginSteps {
         driver.manage().window().maximize();
     }
 
-    @And("Enter username {string}")
-    public void enterUsername(String username) {
-        loginPage.enterUsername(username);
-    }
-
-    @And("Enter password {string}")
-    public void enterPassword(String password) {
-        loginPage.enterPassword(password);
-    }
+//    @And("Enter username {string}")
+//    public void enterUsername(String username) {
+//                loginPage.enterUsername(username);
+//    }
+//
+//    @And("Enter password {string}")
+//    public void enterPassword(String password) {
+//                loginPage.enterPassword(password);
+//    }
 
 
     @When("Click on login button")
@@ -52,5 +53,9 @@ public class LoginSteps {
         Assert.assertEquals(actual,expected);
     }
 
-
+    @And("Enter {string} and {string}")
+    public void enterAnd(String username, String password) {
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+    }
 }
