@@ -1,5 +1,6 @@
 Feature: Login Page Functionalities
 
+  @Login
   Scenario Outline: Login to the user account with valid or invalid credentials
     Given Open Campus "homepage"
     And Enter "<username>" and "<password>"

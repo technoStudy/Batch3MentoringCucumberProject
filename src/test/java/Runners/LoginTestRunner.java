@@ -7,9 +7,9 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/java/features"},
         glue = {"stepDefinitions"},
         plugin = {"pretty",
-        "html:target/myReport.html",
-        "json:target/student-report.json"},
-        tags = "@Student"
+                "html:target/myReport.html",
+                "json:target/student-report.json"},
+        tags = "@Login"
 )
-public class StudentTestsRunner extends AbstractTestNGCucumberTests {
+public class LoginTestRunner extends AbstractTestNGCucumberTests {
 }

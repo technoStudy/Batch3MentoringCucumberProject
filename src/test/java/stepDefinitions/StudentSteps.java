@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import org.testng.Assert;
 import pages.LeftMenu;
 import pages.StudentPage;
 
