@@ -9,7 +9,8 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"pretty",
                 "html:target/myReport.html",
                 "json:target/student-report.json"},
-        tags = "@Login"
+        tags = "@Login",
+        dryRun = false
 )
-public class LoginTestRunner extends AbstractTestNGCucumberTests {
+public class LoginTestsRunner extends AbstractTestNGCucumberTests {
 }

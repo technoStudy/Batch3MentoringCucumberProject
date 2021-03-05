@@ -24,6 +24,11 @@ public class LeftMenu extends Base {
     @FindBy(css = ".group-items > :nth-child(4)>div>:nth-child(1) >a>span")
     private WebElement studentsSubmenu;
 
+    @FindBy(xpath = "//span[contains(text(),'Human Resources')]")
+    private WebElement humanResourcesMenu;
+
+    @FindBy(xpath = "//span[contains(text(),'Employees')]")
+    private WebElement employeesSubmenu;
 
     // Actions of the elements of the page
     public void clickOnStudentMenu() {
@@ -32,6 +37,14 @@ public class LeftMenu extends Base {
 
     public void clickOnStudentsSubmenu() {
         clickOnElement(studentsSubmenu);
+    }
+
+    public void clickOnHumanResourcesMenu() {
+        clickOnElement(humanResourcesMenu);
+    }
+
+    public void clickOnEmployeesSubmenu() {
+        clickOnElement(employeesSubmenu);
     }
 
 }
